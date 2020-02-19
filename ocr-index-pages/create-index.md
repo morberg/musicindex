@@ -28,7 +28,7 @@ What is happening here?
 
 Finally run:
 ```
-awk -f index2csv.awk index.txt|sed 's/, /,/; s/ ,/,/; s/^ //' >index.csv
+awk -f index2csv.awk index.txt|sed -E 's/ (,[0-9]+), /"\1,/; s/^ /"/' >index.csv
 ```
 
 to generate `index.csv` which can then be imported to forScore. First field is *title*, second is *start page,* and third is *tag*.
