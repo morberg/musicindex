@@ -1,8 +1,10 @@
 # How to generate index.csv from images
 ## Using scanned images
-This workflow works nicely for the 10 index pages for "The Best Fake Book Ever" from Hal Leonard. It can be improved significantly. Adjust as needed.
+This workflow works nicely for the 10 index pages for "The Best Fake Book Ever" from Hal Leonard. It can be improved
+significantly. Adjust as needed.
 
-First take screenshots of the index pages. Then run `tesseract` to do OCR on the PNG images and convert them to text. In fish shell:
+First take screenshots of the index pages on an iOS device. Transfer to your computer. Then run `tesseract` to do OCR on
+the PNG images and convert them to text. In fish shell:
 
 ```
 for i in *.png
@@ -10,7 +12,9 @@ for i in *.png
 end
 ```
 
-Next we work on the text to convert it to a properly formatted CSV file. Begin to manually modify the `ocr.txt` file to remove errors from OCR. We will fix some errors later on, but not all. Save this file as `manual-cleanup.txt`. Create sections by starting a line with `#` followed by the name of the section.
+Next we work on the text to convert it to a properly formatted CSV file. Begin to manually modify the `ocr.txt` file to
+remove errors from OCR. We will fix some errors later on, but not all. Save this file as `manual-cleanup.txt`. Create
+sections by starting a line with `#` followed by the name of the section.
 
 Run this command on your semi-clean file:
 
@@ -30,11 +34,14 @@ Finally run:
 awk -f ../scripts/index2csv.awk index.txt >index.csv
 ```
 
-to generate `index.csv` which can then be imported to forScore. First field is *title*, second is *start page*, and third is *tag* in forScore.
+to generate `index.csv` which can then be imported to forScore. First field is *title*, second is *start page*, and
+third is *tag* in forScore.
 
 ## Other useful commands
 ### Data pasted from Excel
-If you copy two columns (one with the title and one with the page number) from Excel and paste them to a text document you will get the title followed by some white space and then the page number. This sed incantation will enclose the first column in quotes, remove unnecessary whitespace, and add a comma between the columns.
+If you copy two columns (one with the title and one with the page number) from Excel and paste them to a text document
+you will get the title followed by some white space and then the page number. This sed incantation will enclose the
+first column in quotes, remove unnecessary whitespace, and add a comma between the columns.
 ```
 sed -E 's/(.*)[[:space:]]([0-9]+)/"\1",\2/'
 ```
