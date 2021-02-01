@@ -10,8 +10,6 @@
 4. Select the tab *JSON* and download the results to `response1.json`, `response2.json`, `response3.json`
 5. Run `python parse-ubf.py`. This will create `ubf-raw.csv`
 6. Manually correct errors in `ubf-raw.csv` and save as `ultimate-broadway-fake.csv`
-   1. Replace all `"  ` with `"`
-   2. Replace all `" ` with `"`
    3. Remove weird lines
-   4. Join orphan lines with previous
+   4. Join remaining orphan lines with previous
 7. Done
