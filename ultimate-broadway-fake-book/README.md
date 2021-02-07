@@ -9,7 +9,8 @@
    (I could not convert one single PDF created in Preview by printing to a file)
 4. Select the tab *JSON* and download the results to `response1.json`, `response2.json`, `response3.json`
 5. Run `python parse-ubf.py`. This will create `ubf-raw.csv`
-6. Manually correct errors in `ubf-raw.csv` and save as `ultimate-broadway-fake.csv`
-   3. Remove weird lines
-   4. Join remaining orphan lines with previous
+6. Manually correct any errors in `ubf-raw.csv` and save as `ultimate-broadway-fake.csv` (there shouldn't be many)
 7. Done
+
+Note: the song Preludium on page 389 has subsongs that will not be listed in the index. Need to add a special case to
+parse them properly.
