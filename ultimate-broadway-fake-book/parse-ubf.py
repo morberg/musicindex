@@ -43,12 +43,12 @@ assert short_string("43") is False
 
 def is_noise(page: str) -> bool:
     """Determine if this page entry is noise"""
+    if "Sök" in page:
+        # From iPad screenshot, not part of index
+        return True
     if page in ("INDEX OF SONGS", "1"):
         return True
     if short_string(page):
-        return True
-    if re.match("Sök", page):
-        # From iPad screenshot, not part of index
         return True
     return False
 
