@@ -41,24 +41,24 @@ assert short_string("Cool") is False
 assert short_string("43") is False
 
 
-def page_is_noise(input: str) -> bool:
+def is_noise(page: str) -> bool:
     """Determine if this page entry is noise"""
-    if input in ("INDEX OF SONGS", "1"):
+    if page in ("INDEX OF SONGS", "1"):
         return True
-    if short_string(input):
+    if short_string(page):
         return True
-    if re.match("Sök", input):
+    if re.match("Sök", page):
         # From iPad screenshot, not part of index
         return True
     return False
 
 
-assert page_is_noise("A6") is True
-assert page_is_noise("INDEX OF SONGS") is True
-assert page_is_noise("A Smile") is False
-assert page_is_noise("322") is False
-assert page_is_noise("Sök the") is True
-assert page_is_noise("1") is True
+assert is_noise("A6") is True
+assert is_noise("INDEX OF SONGS") is True
+assert is_noise("A Smile") is False
+assert is_noise("322") is False
+assert is_noise("Sök the") is True
+assert is_noise("1") is True
 
 
 # %%
@@ -74,7 +74,7 @@ for i, line in enumerate(raw.splitlines()):
     index_line = line.split(".", maxsplit=1)
     # page = '257'
     page = index_line[0].strip("_ ")
-    if page_is_noise(page):
+    if is_noise(page):
         index_entries.append(None)
         continue
     try:
