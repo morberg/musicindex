@@ -5,13 +5,6 @@ import re
 from typing import NamedTuple, List, Optional
 
 
-raw: str = ""
-for i in range(1, 4):
-    with open(f"response{i}.json") as f:
-        data = json.load(f)
-        raw += data["document"]["text"]
-
-
 # %%
 def fix_capital_i(input: str) -> str:
     """Replace []|1 with I"""
@@ -67,8 +60,13 @@ class IndexEntry(NamedTuple):
     song: str
 
 
-index_entries: List[Optional[IndexEntry]] = []
+raw: str = ""
+for file in ("response1.json", "response2.json", "response3.json"):
+    with open(file) as f:
+        data = json.load(f)
+        raw += data["document"]["text"]
 
+index_entries: List[Optional[IndexEntry]] = []
 for i, line in enumerate(raw.splitlines()):
     # ex. "257..Ace In The Hole"
     index_line = line.split(".", maxsplit=1)
