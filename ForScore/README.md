@@ -20,11 +20,13 @@ The Book PDF Name is not needed by ForScore.  However, in indexes created, I att
 ### Books vs Index ###
 Currently All Indexes are for **C** books only.
 
-* 557 Standards	- 556Standards.csv
+* 557 Standards	- 557Standards.csv
+* new bob book - free downloadable PDF from https://www.jstreetjazz.com/FakeBooks/The_New_Bob_Book.pdf (and possibly other locations) built by Bob Roetker. Visit him at https://bobroetkerjazzguitar.yolasite.com.
 * Colorado Cookbook	- Colorado.csv
 * Digital Standards Songbook (Sher) - DigitalStandardsSongbookC.csv
 * Firehouse Jazz Band  - FirehouseJazzBand.csv
 * Jazz LTD - JazzLTD.csv
+* The Latin Real Book (Sher) - LatinRealBook.csv (better)
 * The Latin Real Book (Sher) - LatinRealBkC.csv
 * The New Real Book 1 (Sher) - newrbk1C.csv
 * The New Real Book 2 (Sher) - newrbk2C.csv
@@ -33,6 +35,7 @@ Currently All Indexes are for **C** books only.
 * Real Book 1 v6 (Hal Leonard) - realbk1h.csv
 * Real Book 2 v6 (Hal Leonard) - realbk2h.csv
 * Real Book 3 v6 (Hal Leonard) - realbk3h.csv
+* Real Book 4 v6 (Hal Leonard) - RealBook4.csv
 * Real Book 4 (scanned) - realbk4h.csv (page offset has to be +300 due to pdf wierdness)
 * Old Real Book 1 - realbk1.csv
 * Old Real Book 2 - realbk2.csv
@@ -44,6 +47,7 @@ Currently All Indexes are for **C** books only.
 * 24 Gypsy Jazz Standards - djangoinjune.csv
 * Charlie Parker Omnibook (bass clef)- parkeromnibookbc.csv
 * 101 Sinatra Songs - sinatra101C.csv
+* Vocal Real Book - VocalRealBook.csv
 
 
 
@@ -74,7 +78,7 @@ Now load the index
 
 ### Notes ###
 
-* The commonly availble pdf for **557 Standards** is missing 10+ pages from the end of the book.  The index have the songs marked as "missing" in the title.
+* The commonly available pdf for **557 Standards** is missing 10+ pages from the end of the book.  The index have the songs marked as "missing" in the title.
 
 
 
